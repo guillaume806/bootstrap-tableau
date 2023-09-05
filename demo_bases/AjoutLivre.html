@@ -1,10 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulaire d'ajout de livre</title>
+  <!-- Inclure Bootstrap CSS -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
 </head>
 <body>
-$END$
+<div class="container mt-5 bg-dark text-light rounded">
+  <h1>Formulaire d'ajout de livre</h1>
+  <form action="traitement.php" method="post" enctype="multipart/form-data">
+
+
+    <div class="form-group row">
+      <div class="col-sm-6 col-form-label text-right text-white">
+    <div class="form-group ">
+      <label for="titre" class="col-sm-6 col-form-label text-right text-white">Titre du livre :</label>
+      <input type="text" class="form-control" id="titre" name="titre" required>
+    </div>
+
+    <!-- Auteur -->
+    <div class="form-group">
+      <label for="auteur" class="col-sm-6 col-form-label text-right text-white">Auteur :</label>
+      <input type="text" class="form-control" id="auteur" name="auteur" required>
+    </div>
+
+    <!-- Couverture (Image) -->
+    <div class="form-group">
+      <label for="couverture" class="col-sm-6 col-form-label text-right text-white">Couverture :</label>
+      <input type="file" class="form-control-file" id="couverture" name="couverture" accept="image/*" required>
+    </div>
+
+    <div class="form-group">
+      <label for="score" class="col-sm-6 col-form-label text-right text-white">Score :</label>
+      <input type="range" class="form-range" id="score" name="score" min="0" max="4" step="1">
+      <output for="score">Nul</output>
+    </div>
+
+      </div>
+
+      <div class="col-sm-6">
+
+
+    <div class="form-group">
+      <label for="isbn">ISBN :</label>
+      <input type="text" class="form-control" id="isbn" name="isbn" required>
+    </div>
+
+
+    <div class="form-group">
+      <label for="prix">Prix :</label>
+      <input type="number" class="form-control" id="prix" name="prix" step="0.01" required>
+    </div>
+
+
+    <div class="form-group">
+      <label for="langue">Langue :</label>
+      <select class="form-control" id="langue" name="langue" required>
+        <option value="français">Français</option>
+        <option value="anglais">Anglais</option>
+
+      </select>
+    </div>
+
+
+    <div class="form-group">
+      <label for="genre">Genre :</label>
+      <select class="form-control" id="genre" name="genre" required>
+        <option value="roman">Roman</option>
+        <option value="science-fiction">Science-fiction</option>
+        <option value="fantasy">Fantasy</option>
+        <option value="mystère">Mystère</option>
+
+      </select>
+    </div>
+
+      </div>
+
+
+
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description :</label>
+      <textarea class="form-control" id="description" name="description" rows="4"></textarea>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Ajouter le livre</button>
+  </form>
+</div>
+
+
 </body>
 </html>
